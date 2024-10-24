@@ -2,11 +2,13 @@
 import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatefulWidget {
+
   @override
   _OnboardingScreenState createState() => _OnboardingScreenState();
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
+
   final PageController _controller = PageController();
   int _currentPage = 0;
 
@@ -42,6 +44,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Size size =MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
@@ -59,8 +63,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                          width:300,
-                          height:400,
+                          width:size.width*0.7,
+                          height:size.height *0.4,
                           child: Image.asset(_pages[index].image, height: 300)),
                       SizedBox(height: 20),
                       Text(
